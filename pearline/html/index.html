@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pearline</title>
+
+  <!-- Google Fonts: Playfair Display for headings, Source Sans Pro for everything else -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <!-- Left side navigation -->
+  <nav class="side-nav">
+    <ul>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero / Intro -->
+  <section class="hero">
+    <div class="bg-slides">
+      <div class="slide is-active" style="background-image:url('assets/img/bg-main.jpg')"></div>
+      <div class="slide" style="background-image:url('assets/img/bg-main2.jpg')"></div>
+      <div class="slide" style="background-image:url('assets/img/bg-main3.jpg')"></div>
+      <div class="slide" style="background-image:url('assets/img/bg-main4.jpg')"></div>
+      <div class="slide" style="background-image:url('assets/img/bg-main5.jpg')"></div>
+      <div class="slide" style="background-image:url('assets/img/bg-main6.jpg')"></div>
+      <div class="slide" style="background-image:url('assets/img/bg-main7.jpg')"></div>
+    </div>
+    <!-- subtle dark overlay -->
+    <div class="overlay"></div>
+
+    <!-- giant background text -->
+    <div class="hero-bg-text">Pearl⋆｡°✩</div>
+
+    <!-- main copy block -->
+    <div class="hero-copy">
+      <h1>Pearline</h1>
+      <p>Photography · Videography · Film Production · Original Music · Cover Art · Paintings</p>
+      <a href="#" class="btn">Buy tickets</a>
+    </div>
+
+    <!-- side info: index / label / socials -->
+    <div class="hero-info">
+      <div class="section-index">
+        <span class="current">01</span>
+        <span class="divider">/</span>
+        <span class="total">02</span>
+      </div>
+      <div class="section-label">˖⁺‧₊˚🎧✮💿✮📷✮˚₊‧⁺˖</div>
+      <div class="follow-us">
+        <span>Follow us on social</span>
+        <a href="#">Instagram</a>
+        <a href="#">Vimeo</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom footer navigation -->
+  <footer class="bottom-nav">
+  </footer>
+
+  <script>
+  const slides = Array.from(document.querySelectorAll('.bg-slides .slide'));
+  let i = 0;
+
+  function show(n){
+    slides.forEach((s, idx) => s.classList.toggle('is-active', idx === n));
+  }
+  show(0);
+
+  // auto-rotate every 5s
+  setInterval(() => {
+    i = (i + 1) % slides.length;
+    show(i);
+  }, 5000);
+
+  const hero = document.querySelector('.hero');
+  let locked = false;
+  hero.addEventListener('wheel', (e) => {
+    if (locked) return;
+    locked = true;
+    i = (e.deltaY > 0) ? (i + 1) % slides.length : (i - 1 + slides.length) % slides.length;
+    show(i);
+    setTimeout(() => locked = false, 600);
+  }, { passive: true });
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!-- html/services.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Services — Birds Creative</title>
+
+  <!-- (Optional) same Google fonts as home -->
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="assets/css/services.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="./index.html">Pearline</a>
+      <nav class="nav">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li class="is-active"><a href="./services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <!-- background slideshow -->
+    <div class="bg-slides">
+      <div class="slide is-active" style="background-image:url('assets/img/bg-main.jpg')"></div>
+      <div class="slide" style="background-image:url('assets/img/bg-main2.jpg')"></div>
+      <div class="slide" style="background-image:url('assets/img/bg-main3.jpg')"></div>
+      <div class="slide" style="background-image:url('assets/img/bg-main4.jpg')"></div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <div class="hero-content container">
+      <p class="hero-sub">Photography · Videography · Film · Music · Cover Art · Paintings</p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="services">
+    <div class="container">
+      <div class="grid">
+        <a class="card" href="https://example.com/photography" target="_blank" rel="noopener noreferrer">
+          <div class="card-media" style="background-image:url('assets/img/painting1.jpg')"></div>
+          <div class="card-body">
+            <h3>Photography</h3>
+            <p>Portraits, products, events, fine-art series.</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://example.com/videography" target="_blank" rel="noopener noreferrer">
+          <div class="card-media" style="background-image:url('assets/img/painting2.jpg')"></div>
+          <div class="card-body">
+            <h3>Videography</h3>
+            <p>Brand spots, social reels, interviews, BTS.</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://example.com/film" target="_blank" rel="noopener noreferrer">
+          <div class="card-media" style="background-image:url('assets/img/painting3.jpg')"></div>
+          <div class="card-body">
+            <h3>Film</h3>
+            <p>Short films and micro-docs from concept to grade.</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://example.com/music" target="_blank" rel="noopener noreferrer">
+          <div class="card-media" style="background-image:url('assets/img/painting4.jpg')"></div>
+          <div class="card-body">
+            <h3>Music</h3>
+            <p>Original scores, sound design, mixing & mastering.</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://example.com/cover-art" target="_blank" rel="noopener noreferrer">
+          <div class="card-media" style="background-image:url('assets/img/drawing1.jpg')"></div>
+          <div class="card-body">
+            <h3>Cover Art</h3>
+            <p>Album singles & full packaging, print/streaming.</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://example.com/paintings" target="_blank" rel="noopener noreferrer">
+          <div class="card-media" style="background-image:url('assets/img/bg-main3.jpg')"></div>
+          <div class="card-body">
+            <h3>Paintings</h3>
+            <p>Large-format canvases and commissions.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Have a project in mind?</h2>
+      <p>Tell us about it—we’ll reply within 24 hours.</p>
+      <a class="btn" href="#contact">Start a Project</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Birds Creative</p>
+    </div>
+  </footer>
+
+  <!-- Slideshow logic -->
+  <script>
+    const slides = Array.from(document.querySelectorAll('.bg-slides .slide'));
+    let i = 0;
+    function show(n){ slides.forEach((s, idx)=> s.classList.toggle('is-active', idx===n)); }
+    if (slides.length) {
+      setInterval(()=>{ i=(i+1)%slides.length; show(i); }, 5000);
+    }
+  </script>
+</body>
+</html>
