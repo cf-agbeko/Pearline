@@ -1,0 +1,133 @@
+<!-- html/portfolio.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — Birds Creative</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/portfolio.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="./index.html">Pearline</a>
+      <nav class="nav">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./services.html">Services</a></li>
+          <li class="is-active"><a href="./portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="bg-slides">
+      <div class="slide is-active" style="background-image:url('/assets/img/bg-main.jpg')"></div>
+      <div class="slide" style="background-image:url('/assets/img/bg-main2.jpg')"></div>
+      <div class="slide" style="background-image:url('/assets/img/bg-main3.jpg')"></div>
+      <div class="slide" style="background-image:url('/assets/img/bg-main4.jpg')"></div>
+    </div>
+    <div class="overlay"></div>
+
+    <div class="hero-content container">
+      <p class="hero-sub">Selected work across photography, video, film, music, cover art & painting.</p>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section class="portfolio">
+    <div class="container">
+
+      <!-- CSS-only filter -->
+      <div class="filters">
+        <input type="radio" id="filter-all" name="cat" checked>
+        <label for="filter-all">All</label>
+
+        <input type="radio" id="filter-photo" name="cat">
+        <label for="filter-photo">Photography</label>
+
+        <input type="radio" id="filter-video" name="cat">
+        <label for="filter-video">Videography</label>
+
+        <input type="radio" id="filter-film" name="cat">
+        <label for="filter-film">Film</label>
+
+        <input type="radio" id="filter-music" name="cat">
+        <label for="filter-music">Music</label>
+
+        <input type="radio" id="filter-cover" name="cat">
+        <label for="filter-cover">Cover Art</label>
+
+        <input type="radio" id="filter-paint" name="cat">
+        <label for="filter-paint">Paintings</label>
+      </div>
+
+      <!-- Gallery -->
+      <div class="gallery">
+        <!-- Photography -->
+        <a class="item photography" href="#" style="background-image:url('/assets/img/painting1.jpg')">
+          <div class="meta"><h3>Wild Light</h3><span class="tag">Photography</span></div>
+        </a>
+        <a class="item photography" href="#" style="background-image:url('/assets/img/painting2.jpg')">
+          <div class="meta"><h3>Edges</h3><span class="tag">Photography</span></div>
+        </a>
+
+        <!-- Videography -->
+        <a class="item videography" href="#" style="background-image:url('/assets/img/painting3.jpg')">
+          <div class="meta"><h3>Motion Study</h3><span class="tag">Videography</span></div>
+        </a>
+        <a class="item videography" href="#" style="background-image:url('/assets/img/painting4.jpg')">
+          <div class="meta"><h3>Neon Streets</h3><span class="tag">Videography</span></div>
+        </a>
+
+        <!-- Film -->
+        <a class="item film" href="#" style="background-image:url('/assets/img/art1.jpg')">
+          <div class="meta"><h3>Short: Flight</h3><span class="tag">Film</span></div>
+        </a>
+
+        <!-- Music -->
+        <a class="item music" href="#" style="background-image:url('/assets/img/art2.jpg')">
+          <div class="meta"><h3>Original Score</h3><span class="tag">Music</span></div>
+        </a>
+
+        <!-- Cover Art -->
+        <a class="item coverart" href="#" style="background-image:url('/assets/img/drawing1.jpg')">
+          <div class="meta"><h3>Single: Birdsong</h3><span class="tag">Cover Art</span></div>
+        </a>
+        <a class="item coverart" href="#" style="background-image:url('/assets/img/painting1.jpg')">
+          <div class="meta"><h3>Album: Plumage</h3><span class="tag">Cover Art</span></div>
+        </a>
+
+        <!-- Paintings -->
+        <a class="item paintings" href="#" style="background-image:url('/assets/img/painting2.jpg')">
+          <div class="meta"><h3>Canvas No. 12</h3><span class="tag">Paintings</span></div>
+        </a>
+        <a class="item paintings" href="#" style="background-image:url('/assets/img/painting3.jpg')">
+          <div class="meta"><h3>Golden Hour</h3><span class="tag">Paintings</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container"><p>© 2025 Birds Creative</p></div>
+  </footer>
+
+  <!-- Slideshow -->
+  <script>
+    const slides = Array.from(document.querySelectorAll('.bg-slides .slide'));
+    let i = 0;
+    function show(n){ slides.forEach((s, idx)=> s.classList.toggle('is-active', idx===n)); }
+    if (slides.length) setInterval(()=>{ i=(i+1)%slides.length; show(i); }, 5000);
+  </script>
+</body>
+</html>
