@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Pearline</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Serif+Display:ital@0;1&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap");
+  </style>
+  <link rel="stylesheet" href="contact.css" />
+</head>
+<body>
+  <div class="noise-overlay"></div>
+
+  <nav class="nav">
+    <div class="nav-logo"><a href="index.html">Pearl<span class="nav-star">⋆</span></a></div>
+    <ul class="nav-links">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html" style="color:var(--olive);">Contact</a></li>
+    </ul>
+    <button class="nav-tickets">Buy Tickets</button>
+  </nav>
+
+  <div class="contact-layout">
+
+    <!-- LEFT PANEL -->
+    <aside class="contact-aside">
+      <div class="contact-aside-inner">
+        <div class="section-tag" style="color: rgba(197,160,96,0.6);">[ Get In Touch ]</div>
+        <h1 class="contact-title">Let's<br/><em>talk.</em></h1>
+
+        <div class="contact-info">
+          <div class="info-block">
+            <span class="info-label">Email</span>
+            <span class="info-value">hello@pearline.studio</span>
+          </div>
+          <div class="info-block">
+            <span class="info-label">Instagram</span>
+            <span class="info-value">@pearline</span>
+          </div>
+          <div class="info-block">
+            <span class="info-label">Vimeo</span>
+            <span class="info-value">vimeo.com/pearline</span>
+          </div>
+          <div class="info-block">
+            <span class="info-label">YouTube</span>
+            <span class="info-value">@pearline</span>
+          </div>
+        </div>
+
+        <div class="contact-stamp">
+          <div class="cs-inner">
+            <span>PEARLINE</span>
+            <span class="cs-star">★</span>
+            <span>STUDIO</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT PANEL — FORM -->
+    <main class="contact-form-panel">
+      <div class="form-header">
+        <div class="section-tag">[ New Project Inquiry ]</div>
+        <p class="form-intro">Tell us about your project. We'll get back to you within 48 hours.</p>
+      </div>
+
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="your@email.com" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Service</label>
+          <select>
+            <option value="">Select a service…</option>
+            <option>Photography</option>
+            <option>Videography</option>
+            <option>Film Production</option>
+            <option>Original Music</option>
+            <option>Cover Art</option>
+            <option>Paintings</option>
+            <option>Multiple / Unsure</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Message</label>
+          <textarea rows="6" placeholder="Describe your project, timeline, and vision…" required></textarea>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn-dark">Send Message →</button>
+          <span class="form-note">We respond within 48 hours</span>
+        </div>
+
+      </form>
+
+      <div class="form-success" id="form-success" style="display:none;">
+        <div class="success-inner">
+          <span class="success-icon">✦</span>
+          <h3>Message received.</h3>
+          <p>We'll be in touch within 48 hours. Thank you for reaching out to Pearline.</p>
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-wordmark">Pearline</div>
+      <div class="footer-links">
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="#">Instagram</a>
+        <a href="#">Vimeo</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Pearline Creative Studio</span>
+      <span>Photography · Videography · Film · Music · Art</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.querySelector('.contact-form').style.display = 'none';
+      document.getElementById('form-success').style.display = 'flex';
+    }
+  </script>
+</body>
+</html>

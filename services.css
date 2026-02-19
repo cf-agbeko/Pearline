@@ -1,0 +1,122 @@
+/* services.css — page-specific styles */
+
+.page-header {
+  background: var(--olive);
+  padding: 9rem 4rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header-inner { position: relative; z-index: 1; }
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 12vw, 9rem);
+  color: var(--cream);
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  margin: 0.5rem 0 2rem;
+}
+
+.page-header-tape {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  background: var(--tape-red);
+  color: white;
+  padding: 0.5rem 2rem;
+  display: inline-block;
+  transform: rotate(-1deg);
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+/* Services detail layout */
+.services-detail {
+  padding: 0;
+  background: var(--off-white);
+}
+
+.services-layout { max-width: 1200px; margin: 0 auto; }
+
+.service-row {
+  display: grid;
+  grid-template-columns: 60px 100px 1fr 80px;
+  gap: 2rem;
+  align-items: center;
+  padding: 3.5rem 4rem;
+  border-bottom: 1px solid rgba(45,58,46,0.12);
+  transition: background 0.25s;
+}
+
+.service-row:hover { background: var(--pink-light); }
+
+.service-row-num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: rgba(26,26,26,0.3);
+  letter-spacing: 0.1em;
+}
+
+.service-row-letter {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-style: italic;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.service-row-body h2 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 0.6rem;
+}
+
+.service-row-body p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: rgba(26,26,26,0.65);
+  max-width: 55ch;
+}
+
+.service-row-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: rgba(45,58,46,0.4);
+  text-transform: uppercase;
+  text-align: right;
+}
+
+/* CTA section */
+.page-cta {
+  background: var(--pink);
+  padding: 6rem 4rem;
+  text-align: center;
+}
+
+.page-cta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  color: var(--charcoal);
+  margin-bottom: 2rem;
+}
+
+.page-cta h2 em { color: var(--rust); font-style: italic; }
+
+@media (max-width: 768px) {
+  .service-row {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.5rem 1rem;
+    padding: 2rem 1.5rem;
+  }
+  .service-row-num { grid-row: 1; }
+  .service-row-letter { grid-row: 1; font-size: 2rem; }
+  .service-row-body { grid-column: 1 / -1; grid-row: 2; }
+  .service-row-tag { display: none; }
+  .page-header { padding: 8rem 1.5rem 3rem; }
+}

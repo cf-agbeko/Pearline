@@ -1,0 +1,230 @@
+/* about.css */
+
+.about-header {
+  background: var(--pink-light);
+  padding: 9rem 4rem 5rem;
+  overflow: hidden;
+  border-bottom: 2px solid var(--charcoal);
+  position: relative;
+}
+
+.about-header-inner { position: relative; z-index: 1; }
+
+.about-big-title {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 14vw, 12rem);
+  color: var(--charcoal);
+  letter-spacing: -0.04em;
+  line-height: 0.85;
+  margin: 0.5rem 0 2rem;
+}
+
+.about-big-title em { color: var(--rust); font-style: italic; }
+
+.about-tape {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  background: var(--tape-red);
+  color: white;
+  padding: 0.5rem 2rem;
+  display: inline-block;
+  transform: rotate(0.8deg);
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+/* Mission */
+.mission-section {
+  background: var(--off-white);
+  padding: 6rem 4rem;
+}
+
+.mission-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.mission-text h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: var(--charcoal);
+  line-height: 1.05;
+  margin-bottom: 2rem;
+}
+
+.mission-text h2 em { color: var(--olive); font-style: italic; }
+
+.mission-text p {
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: rgba(26,26,26,0.7);
+  max-width: 52ch;
+  margin-bottom: 1.2rem;
+}
+
+/* Values */
+.values-section {
+  background: var(--charcoal);
+  padding: 5rem 4rem;
+}
+
+.values-header {
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+}
+
+.values-header .section-tag { color: rgba(245,240,232,0.4); margin-bottom: 1rem; }
+
+.values-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 6rem);
+  color: var(--cream);
+  line-height: 0.9;
+}
+
+.values-title em { color: var(--gold); font-style: italic; }
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(245,240,232,0.12);
+}
+
+.value-item {
+  padding: 3rem 2.5rem 3rem 0;
+  border-right: 1px solid rgba(245,240,232,0.1);
+  padding-right: 2.5rem;
+}
+
+.value-item:last-child { border-right: none; padding-right: 0; padding-left: 2.5rem; }
+.value-item:not(:first-child):not(:last-child) { padding-left: 2.5rem; }
+
+.value-letter {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-style: italic;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.value-item h3 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 0.8rem;
+}
+
+.value-item p {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: rgba(245,240,232,0.5);
+}
+
+/* Team */
+.team-section {
+  background: var(--cream);
+  padding: 5rem 4rem;
+  border-top: 2px solid var(--charcoal);
+}
+
+.team-header {
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+}
+
+.team-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  color: var(--charcoal);
+  line-height: 1;
+}
+
+.team-header h2 em { color: var(--olive); font-style: italic; }
+
+.team-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.team-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.team-avatar {
+  height: 260px;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 5px,
+    rgba(255,255,255,0.06) 5px,
+    rgba(255,255,255,0.06) 6px
+  );
+}
+
+.team-info h3 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-style: italic;
+  color: var(--charcoal);
+  margin-bottom: 0.4rem;
+}
+
+.team-role {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--olive);
+  margin-bottom: 1.2rem;
+}
+
+.team-info p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(26,26,26,0.7);
+  max-width: 45ch;
+}
+
+.page-cta {
+  padding: 6rem 4rem;
+  text-align: center;
+}
+
+.page-cta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  margin-bottom: 2rem;
+}
+
+.page-cta h2 em { font-style: italic; }
+
+@media (max-width: 768px) {
+  .about-header { padding: 8rem 1.5rem 3rem; }
+  .mission-section { padding: 4rem 1.5rem; }
+  .mission-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  .values-section { padding: 4rem 1.5rem; }
+  .values-grid { grid-template-columns: 1fr; }
+  .value-item, .value-item:last-child, .value-item:not(:first-child):not(:last-child) {
+    padding: 2rem 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(245,240,232,0.1);
+  }
+  .team-section { padding: 4rem 1.5rem; }
+  .team-card { grid-template-columns: 1fr; }
+  .team-avatar { height: 180px; }
+  .page-cta { padding: 4rem 1.5rem; }
+}

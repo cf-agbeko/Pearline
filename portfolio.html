@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Pearline</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Serif+Display:ital@0;1&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap");
+  </style>
+  <link rel="stylesheet" href="portfolio.css" />
+</head>
+<body>
+  <div class="noise-overlay"></div>
+
+  <nav class="nav">
+    <div class="nav-logo"><a href="index.html">Pearl<span class="nav-star">⋆</span></a></div>
+    <ul class="nav-links">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html" style="color:var(--olive);">Portfolio</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-tickets">Buy Tickets</button>
+  </nav>
+
+  <header class="port-header">
+    <div class="port-header-inner">
+      <p class="hero-overline" style="color: var(--gold);">↳ Selected Works</p>
+      <h1 class="port-title">
+        <span>OUR</span>
+        <span class="port-title-italic">PORTFOLIO</span>
+      </h1>
+    </div>
+    <div class="port-header-tape">OUR WORK ～ OUR WORK ～ OUR WORK ～ OUR WORK ～ OUR WORK ～ OUR WORK ～</div>
+  </header>
+
+  <!-- FILTER -->
+  <div class="port-filter">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="photo">Photography</button>
+    <button class="filter-btn" data-filter="video">Videography</button>
+    <button class="filter-btn" data-filter="film">Film</button>
+    <button class="filter-btn" data-filter="art">Art</button>
+  </div>
+
+  <!-- PORTFOLIO MOSAIC -->
+  <section class="port-mosaic">
+    <div class="mosaic-grid">
+
+      <div class="mosaic-item mosaic-tall" data-cat="photo" style="background: #2d3a2e;">
+        <div class="mosaic-label">
+          <span class="mosaic-cat">Photography</span>
+          <span class="mosaic-title">Editorial Series I</span>
+        </div>
+      </div>
+
+      <div class="mosaic-item" data-cat="art" style="background: #c5a060;">
+        <div class="mosaic-label">
+          <span class="mosaic-cat">Cover Art</span>
+          <span class="mosaic-title">Album Artwork</span>
+        </div>
+      </div>
+
+      <div class="mosaic-item" data-cat="film" style="background: #1a1a2e;">
+        <div class="mosaic-label">
+          <span class="mosaic-cat">Film</span>
+          <span class="mosaic-title">Short Film — Horizon</span>
+        </div>
+      </div>
+
+      <div class="mosaic-item mosaic-wide" data-cat="video" style="background: #8b2e1a;">
+        <div class="mosaic-label">
+          <span class="mosaic-cat">Videography</span>
+          <span class="mosaic-title">Brand Campaign — 2024</span>
+        </div>
+      </div>
+
+      <div class="mosaic-item" data-cat="photo" style="background: #4a3728;">
+        <div class="mosaic-label">
+          <span class="mosaic-cat">Photography</span>
+          <span class="mosaic-title">Portrait Series</span>
+        </div>
+      </div>
+
+      <div class="mosaic-item mosaic-tall" data-cat="art" style="background: #e8c4c4;">
+        <div class="mosaic-label" style="color: var(--charcoal);">
+          <span class="mosaic-cat" style="border-color: var(--charcoal);">Painting</span>
+          <span class="mosaic-title">Commission — Study in Pink</span>
+        </div>
+      </div>
+
+      <div class="mosaic-item" data-cat="video" style="background: #3a2d2d;">
+        <div class="mosaic-label">
+          <span class="mosaic-cat">Videography</span>
+          <span class="mosaic-title">Music Video</span>
+        </div>
+      </div>
+
+      <div class="mosaic-item" data-cat="film" style="background: #2a3840;">
+        <div class="mosaic-label">
+          <span class="mosaic-cat">Film</span>
+          <span class="mosaic-title">Documentary Excerpt</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="page-cta" style="background: var(--cream); border-top: 2px solid var(--charcoal);">
+    <h2 style="color: var(--olive);">Have a project <em>in mind?</em></h2>
+    <a href="contact.html" class="btn-editorial">Let's Talk →</a>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-wordmark">Pearline</div>
+      <div class="footer-links">
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="#">Instagram</a>
+        <a href="#">Vimeo</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Pearline Creative Studio</span>
+      <span>Photography · Videography · Film · Music · Art</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Filter
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.mosaic-item').forEach(item => {
+          item.style.opacity = filter === 'all' || item.dataset.cat === filter ? '1' : '0.25';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
